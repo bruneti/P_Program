@@ -1,2 +1,4 @@
 # P_Program
-Es una implementación del cálculo de la tasa de transición radiativa y el tiempo de vida radiativo en MATLAB, a partir de resultados de SIESTA
+The different files shows the P_Program for SIESTA calculations post study in MATLAB. The different files are the program and the optimized program with comments in english (EN) and spanish (ES).
+
+There are also some files of SIESTA calculations as examples for the P_Program use.
