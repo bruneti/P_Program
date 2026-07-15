@@ -17,17 +17,17 @@ z1 = LM(:,7);  z2 = LM(:,8);
 N         = length(Delta_r_complete);
 lmax_max  = 7;
 
-% ── Masks ────────────────────────────────────────────────────────────────
+% === Masks =====================================================================
 zero_mask   = Delta_r_complete(:,1)==0 & Delta_r_complete(:,2)==0 & Delta_r_complete(:,3)==0;
 nonzero_idx = find(~zero_mask);
 M_nz        = length(nonzero_idx);
 
-% ── Result: 3 columns, one per direction (il=-1, il=0, il=1) ─────────────
+% === Result: 3 columns, one per direction (il=-1, il=0, il=1) ============
 PLM_Delta = zeros(N, 3);
 
-% ════════════════════════════════════════════════════════════════════════
+% =========================================================================
 %  Case Delta_r = 0
-% ═════════════════════════════════════════════════════════════════════════
+% =========================================================================
 fprintf('Computing elements with Delta_r = 0...\n');
 idx0 = find(zero_mask);
 for i = idx0(:)'
@@ -38,10 +38,10 @@ for i = idx0(:)'
     end
 end
 
-% ═════════════════════════════════════════════════════════════════════════
-%  PRECOMPUTE 1 — ILLL table
+% =========================================================================
+%  PRECOMPUTE 1 - ILLL table
 %  Independent of il -> computed once for the 3 directions
-% ═════════════════════════════════════════════════════════════════════════
+% =========================================================================
 fprintf('Building ILLL table...\n');
 tic
 
@@ -102,10 +102,10 @@ for pp = 1:N_pairs
 end
 fprintf('  ILLL table ready in %.1f s\n', toc);
 
-% ═════════════════════════════════════════════════════════════════════════
-%  PRECOMPUTE 2 — Real spherical harmonics
+% =========================================================================
+%  PRECOMPUTE 2 - Real spherical harmonics
 %  Independent of il -> computed once for the 3 directions
-% ═════════════════════════════════════════════════════════════════════════
+% =========================================================================
 fprintf('Precomputing Yrml...\n');
 tic
 
@@ -123,9 +123,9 @@ for ud = 1:N_udelta
 end
 fprintf('  Yrml ready in %.1f s\n', toc);
 
-% ═════════════════════════════════════════════════════════════════════════
-%  MAIN LOOP — the 3 directions in each iteration
-% ═════════════════════════════════════════════════════════════════════════
+% =========================================================================
+%  MAIN LOOP - the 3 directions in each iteration
+% =========================================================================
 fprintf('Computing PLM elements for il = -1, 0, +1...\n');
 tic
 
@@ -167,9 +167,9 @@ for ii = 1:M_nz
 end
 fprintf('  Main loop ready in %.1f s\n', toc);
 
-% ═════════════════════════════════════════════════════════════════════════
-%  Save results — same format as the original program
-% ═════════════════════════════════════════════════════════════════════════
+% =========================================================================
+%  Save results - same format as the original program
+% =========================================================================
 PLM_Delta_y = PLM_Delta(:,1);   save('PLM_Definitivo_y.mat', 'PLM_Delta_y');
 PLM_Delta_z = PLM_Delta(:,2);   save('PLM_Definitivo_z.mat', 'PLM_Delta_z');
 PLM_Delta_x = PLM_Delta(:,3);   save('PLM_Definitivo_x.mat', 'PLM_Delta_x');
