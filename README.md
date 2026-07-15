@@ -1,4 +1,4 @@
 # P_Program
-The different files shows the P_Program for SIESTA calculations post study in MATLAB. The different files are the program and the optimized program with comments in english (EN) and spanish (ES).
-
-There are also some files of SIESTA calculations as examples for the P_Program use.
+Post-processing tool for SIESTA DFT calculations in MATLAB. It computes the momentum matrix element ⟨ψ|P|ψ⟩, the transition dipole moment, the radiative transition rate and the associated radiative lifetime from SIESTA output data.
+The repository includes the main program and an optimized version, both available with comments in English (EN) and Spanish (ES). Sample SIESTA output files are also provided as working examples.
+Each subfolder contains its own README with specific instructions.
