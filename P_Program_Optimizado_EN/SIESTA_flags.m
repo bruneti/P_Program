@@ -15,7 +15,7 @@
 function flags = SIESTA_flags
 
 %% INPUT PATHS   >>> USER CHOICE: point these to your SIESTA simulation
-  flags.input.directory = ['./Ejemplo_1/'];
+  flags.input.directory = ['../Ejemplo_1/'];
   flags.input.file      = 'hBN.out';
 
 %% READ FORMAT OF O, H, DM:  NetCDF ('yes') vs OLD BINARY ('no')

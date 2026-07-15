@@ -2,7 +2,7 @@
 % Calculo_Final_SOC.m  -  FINAL VERSION
 % Version adapted for Nspin = 8 (Spin-Orbit Coupling, non-collinear SIESTA)
 %
-% ─── Differences with respect to Calculo_Final.m (no-SOC / spin-polarised) ─
+% ==== Differences with respect to Calculo_Final.m (no-SOC / spin-polarised) ==
 %
 %   1. siesta.Hsc is a SINGLE spinor matrix of dimension (2*Nu x 2*Nu x nsc).
 %      read_hodm.m assembles it via kron products, so no spin index needed.
@@ -37,11 +37,11 @@
 %      By time-reversal symmetry,  Gamma_R(emp2) = Gamma_R(emp1), so only
 %      ONE final state of the pair needs to be computed.
 %
-% ─── Workflow ─────────────────────────────────────────────────────────────
+% === Workflow ============================================================
 %   Pain_Program_3il  ->  Reordenar  ->  this script
 %   (identical to the no-SOC workflow; just swap the final script)
 %
-% ─── User input ──────────────────────────────────────────────────────────
+% ====== User input =======================================================
 %   Set idx_occ_1, idx_occ_2, idx_emp_1, idx_emp_2 to the Kramers-pair
 %   indices you want to evaluate. The script will verify the pairs are
 %   actually degenerate before proceeding.
@@ -73,7 +73,7 @@ idx_emp_1 = 649;   % >>> USER CHOICE: final state for which the rate is computed
 idx_emp_2 = 650;   % >>> (only used for the degeneracy check; rate is the same)
 
 %% -- Sanity check: verify Kramers degeneracy ----------------------------
-tol_deg = 1e-4;   % eV — tolerance for "degenerate"
+tol_deg = 1e-4;   % eV - tolerance for "degenerate"
 E_occ1  = eigen_energies(idx_occ_1);
 E_occ2  = eigen_energies(idx_occ_2);
 E_emp1  = eigen_energies(idx_emp_1);

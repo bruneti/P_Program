@@ -37,11 +37,11 @@
 %      Por simetría de inversión temporal,  Gamma_R(emp2) = Gamma_R(emp1), así
 %      que basta calcular UN estado final del par.
 %
-% ─── Flujo de trabajo ──────────────────────────────────────────────────────
+% ==== Flujo de trabajo =====================================================
 %   Pain_Program_3il  ->  Reordenar  ->  este script
 %   (idéntico al flujo sin SOC; solo se cambia el script final)
 %
-% ─── Entrada del usuario ───────────────────────────────────────────────────
+% === Entrada del usuario ===================================================
 %   Fija idx_occ_1, idx_occ_2, idx_emp_1, idx_emp_2 con los índices del par de
 %   Kramers a evaluar. El script verifica que los pares sean realmente
 %   degenerados antes de continuar.

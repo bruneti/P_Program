@@ -23,7 +23,7 @@ fstr = [ siesta.system_label '.STRUCT_OUT' ];
 file  = fileread(fstr);
 split = strsplit(file, '\n');
 
-%% ── 1. Locate the Natoms line ───────────────────────────────────────────
+%% ==1. Locate the Natoms line ======================================
 %  The first line containing a single positive integer is Natoms.
 %  The lattice vectors always have 3 tokens, so there is no ambiguity.
 
@@ -46,7 +46,7 @@ end
 siesta.Natoms.ucell = str2double(strtrim(split{natoms_idx}));
 siesta.Natoms.scell = siesta.lattice.supercell.Ncells * siesta.Natoms.ucell;
 
-%% ── 2. Detect the column order (species, Z) or (Z, species) ─────────────
+%% == 2. Detect the column order (species, Z) or (Z, species) ==============
 %  The STRUCT_OUT may write the columns in two orders depending on the
 %  SIESTA version:
 %    Format A (old):  species_idx   Z   xf  yf  zf
@@ -83,7 +83,7 @@ else
           fstr, strjoin(first_atom_line), c1, c2, siesta.Nspecies);
 end
 
-%% ── 3. Read the unit-cell atoms ─────────────────────────────────────────
+%% == 3. Read the unit-cell atoms ========================================
 R = siesta.lattice.vectors.direct.';
 
 for i = 1 : siesta.Natoms.ucell
@@ -102,7 +102,7 @@ for i = 1 : siesta.Natoms.ucell
     atom(i).PAO.ordering   = siesta.species(atom(i).species_number).PAO.ordering;
 end
 
-%% ── 4. Expand to the super-cell ─────────────────────────────────────────
+%% ==== 4. Expand to the super-cell ==========================================
 siesta.lattice.supercell.cells.atoms(1,:) = 1 : siesta.Natoms.ucell;
 
 for ic = 1 : siesta.lattice.supercell.Ncells - 1

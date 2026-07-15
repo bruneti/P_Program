@@ -17,17 +17,17 @@ z1 = LM(:,7);  z2 = LM(:,8);
 N         = length(Delta_r_complete);
 lmax_max  = 7;
 
-% ── Máscaras ─────────────────────────────────────────────────────────────
+% == Máscaras =============================================================
 zero_mask   = Delta_r_complete(:,1)==0 & Delta_r_complete(:,2)==0 & Delta_r_complete(:,3)==0;
 nonzero_idx = find(~zero_mask);
 M_nz        = length(nonzero_idx);
 
-% ── Resultado: 3 columnas, una por dirección (il=-1, il=0, il=1) ─────────
+% === Resultado: 3 columnas, una por dirección (il=-1, il=0, il=1) ========
 PLM_Delta = zeros(N, 3);
 
-% ═════════════════════════════════════════════════════════════════════════
+% =========================================================================
 %  Caso Delta_r = 0
-% ═════════════════════════════════════════════════════════════════════════
+% =========================================================================
 fprintf('Calculando elementos con Delta_r = 0...\n');
 idx0 = find(zero_mask);
 for i = idx0(:)'
@@ -38,10 +38,10 @@ for i = idx0(:)'
     end
 end
 
-% ═════════════════════════════════════════════════════════════════════════
-%  PRECÁLCULO 1 — Tabla ILLL
+% =========================================================================
+%  PRECÁLCULO 1 - Tabla ILLL
 %  Independiente de il -> se calcula una sola vez para las 3 direcciones
-% ═════════════════════════════════════════════════════════════════════════
+% =========================================================================
 fprintf('Construyendo tabla ILLL...\n');
 tic
 
@@ -102,10 +102,10 @@ for pp = 1:N_pairs
 end
 fprintf('  Tabla ILLL lista en %.1f s\n', toc);
 
-% ═════════════════════════════════════════════════════════════════════════
-%  PRECÁLCULO 2 — Armónicos esféricos reales
+% =========================================================================
+%  PRECÁLCULO 2 - Armónicos esféricos reales
 %  Independiente de il -> se calcula una sola vez para las 3 direcciones
-% ═════════════════════════════════════════════════════════════════════════
+% =========================================================================
 fprintf('Precalculando Yrml...\n');
 tic
 
@@ -123,9 +123,9 @@ for ud = 1:N_udelta
 end
 fprintf('  Yrml listo en %.1f s\n', toc);
 
-% ═════════════════════════════════════════════════════════════════════════
-%  BUCLE PRINCIPAL — las 3 direcciones en cada iteración
-% ═════════════════════════════════════════════════════════════════════════
+% =========================================================================
+%  BUCLE PRINCIPAL - las 3 direcciones en cada iteración
+% =========================================================================
 fprintf('Calculando elementos PLM para il = -1, 0, +1...\n');
 tic
 
@@ -167,9 +167,9 @@ for ii = 1:M_nz
 end
 fprintf('  Bucle principal listo en %.1f s\n', toc);
 
-% ═════════════════════════════════════════════════════════════════════════
-%  Guardar resultados — mismo formato que el programa original
-% ═════════════════════════════════════════════════════════════════════════
+% =========================================================================
+%  Guardar resultados - mismo formato que el programa original
+% =========================================================================
 PLM_Delta_y = PLM_Delta(:,1);   save('PLM_Definitivo_y.mat', 'PLM_Delta_y');
 PLM_Delta_z = PLM_Delta(:,2);   save('PLM_Definitivo_z.mat', 'PLM_Delta_z');
 PLM_Delta_x = PLM_Delta(:,3);   save('PLM_Definitivo_x.mat', 'PLM_Delta_x');
