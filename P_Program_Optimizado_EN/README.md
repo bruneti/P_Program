@@ -16,7 +16,7 @@ Cargar_SIESTA  ->  Pain_Program_3il  ->  Reordenar  ->  Calculo_Final[_SOC | _W_
 ```
 
 1. **`Cargar_SIESTA.m`** - reads the SIESTA files (`siesta`, `post`, `constants`).
-2. **`Pain_Program_3il.m`** - computes the P-matrix elements for the THREE
+2. **`P_Program_3il.m`** - computes the P-matrix elements for the THREE
    directions at once and saves `PLM_Definitivo_x/y/z.mat`.
 3. **`Reordenar.m`** - load the desired direction, rename to `PLM_Delta`, then
    run it to get the matrix form (and the Bloch sum with more than one k-point).

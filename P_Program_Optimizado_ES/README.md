@@ -12,11 +12,11 @@ Rutinas de lectura extraídas y recortadas del paquete **GROGU**
 ## Pipeline
 
 ```
-Cargar_SIESTA  ->  Pain_Program_3il  ->  Reordenar  ->  Calculo_Final[_SOC | _W_vac]
+Cargar_SIESTA  ->  P_Program_3il  ->  Reordenar  ->  Calculo_Final[_SOC | _W_vac]
 ```
 
 1. **`Cargar_SIESTA.m`** — lee los ficheros de SIESTA (`siesta`, `post`, `constants`).
-2. **`Pain_Program_3il.m`** — calcula los elementos de la matriz P para las TRES
+2. **`P_Program_3il.m`** — calcula los elementos de la matriz P para las TRES
    direcciones a la vez y guarda `PLM_Definitivo_x/y/z.mat`.
 3. **`Reordenar.m`** — carga la dirección deseada, renómbrala a `PLM_Delta` y
    ejecútalo para obtener la forma matricial (y la suma de Bloch con más de un

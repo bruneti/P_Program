@@ -1,4 +1,4 @@
-%% Pain_Program_3il.m
+%% P_Program_3il.m
 % Optimized version: computes the 3 directions (il = -1, 0, 1) in a single run.
 % The ILLL and Yrml tables are built once and reused for the 3 directions.
 % Output: PLM_Definitivo_y.mat, PLM_Definitivo_z.mat, PLM_Definitivo_x.mat

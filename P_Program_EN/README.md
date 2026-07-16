@@ -11,13 +11,13 @@ Reading routines extracted and trimmed from the **GROGU** package
 ## Pipeline
 
 ```
-Cargar_SIESTA  ->  Pain_Program  ->  Reordenar  ->  Calculo_Final
+Cargar_SIESTA  ->  P_Program  ->  Reordenar  ->  Calculo_Final
 ```
 
 1. **`Cargar_SIESTA.m`** - reads the SIESTA files and leaves the `siesta`,
    `post` and `constants` structures in the workspace. Saves `siesta.mat`
    and `post.mat`.
-2. **`Pain_Program.m`** - computes the P-matrix elements for ONE emission
+2. **`P_Program.m`** - computes the P-matrix elements for ONE emission
    direction. Choose it with `il` (-1 -> y, 0 -> z, 1 -> x). Run it three times
    (once per direction) to obtain x, y and z.
 3. **`Reordenar.m`** - turns the string-form output into matrix form and, with

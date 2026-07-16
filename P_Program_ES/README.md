@@ -11,12 +11,12 @@ Rutinas de lectura extraídas y recortadas del paquete **GROGU**
 ## Pipeline
 
 ```
-Cargar_SIESTA  ->  Pain_Program  ->  Reordenar  ->  Calculo_Final
+Cargar_SIESTA  ->  P_Program  ->  Reordenar  ->  Calculo_Final
 ```
 
 1. **`Cargar_SIESTA.m`** - lee los ficheros de SIESTA y deja en el workspace las
    estructuras `siesta`, `post` y `constants`. Guarda `siesta.mat` y `post.mat`.
-2. **`Pain_Program.m`** - calcula los elementos de la matriz P para UNA dirección
+2. **`P_Program.m`** - calcula los elementos de la matriz P para UNA dirección
    de emisión. Se elige con `il` (-1 -> y, 0 -> z, 1 -> x). Ejecútalo tres veces
    (una por dirección) para obtener x, y y z.
 3. **`Reordenar.m`** - pasa la salida en forma de cadena a forma matricial y, con

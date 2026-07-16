@@ -2,7 +2,7 @@
 % Construye los elementos de la matriz P (operador momento) para UNA
 % dirección de emisión, elegida mediante 'il' más abajo.
 %
-% Pipeline:  Cargar_SIESTA -> Pain_Program -> Reordenar -> Calculo_Final
+% Pipeline:  Cargar_SIESTA -> P_Program -> Reordenar -> Calculo_Final
 % Tras este script, ejecuta Reordenar (para poner P en forma matricial) y
 % luego Calculo_Final, que devuelve <|P|>, Mu, Gamma_R y la vida media.
 % ------------------------------------------------------------------------

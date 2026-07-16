@@ -2,7 +2,7 @@
 % Builds the P-matrix elements (momentum operator) for ONE emission
 % direction, selected through 'il' below.
 %
-% Pipeline:  Cargar_SIESTA -> Pain_Program -> Reordenar -> Calculo_Final
+% Pipeline:  Cargar_SIESTA -> P_Program -> Reordenar -> Calculo_Final
 % After this script, run Reordenar (to reshape P into matrix form) and then
 % Calculo_Final, which returns <|P|>, Mu, Gamma_R and the lifetime.
 % ------------------------------------------------------------------------

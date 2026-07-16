@@ -1,4 +1,4 @@
-%% Pain_Program_3il.m
+%% P_Program_3il.m
 % Versión que calcula las 3 direcciones (il = -1, 0, 1) en una sola ejecución.
 % Las tablas ILLL y Yrml se construyen una sola vez y se reutilizan para las 3.
 % Salida: PLM_Definitivo_y.mat, PLM_Definitivo_z.mat, PLM_Definitivo_x.mat
