@@ -29,8 +29,8 @@ Ok=(Ok+Ok')/2;
 [eigen_vector2,~]=eig(Hk(:,:,2),Ok);
 % >>> ELECCIÓN DEL USUARIO: estados inicial y final más abajo.
 % eigen_vector1 = spin up, eigen_vector2 = spin down.
- C_mu=eigen_vector1(:,142);   % >>> índice del estado inicial
- C_mup=eigen_vector1(:,143);  % >>> índice del estado final
+ C_mu=eigen_vector1(:,4);   % >>> índice del estado inicial
+ C_mup=eigen_vector1(:,5);  % >>> índice del estado final
 else
  
 H_eikr=zeros(Nu,Nu,length(ks),p);

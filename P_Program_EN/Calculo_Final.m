@@ -28,8 +28,8 @@ Ok=(Ok+Ok')/2;
 [eigen_vector2,~]=eig(Hk(:,:,2),Ok);
 % >>> USER CHOICE: initial and final states below.
 % eigen_vector1 = spin up, eigen_vector2 = spin down.
- C_mu=eigen_vector1(:,142);   % >>> initial state index
- C_mup=eigen_vector1(:,143);  % >>> final state index
+ C_mu=eigen_vector1(:,4);   % >>> initial state index
+ C_mup=eigen_vector1(:,5);  % >>> final state index
 else
 
 H_eikr=zeros(Nu,Nu,length(ks),p);
