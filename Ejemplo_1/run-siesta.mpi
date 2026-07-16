@@ -1,0 +1,8 @@
+#!/bin/bash
+#PBS -N NH3
+#PBS -o salida.out
+#PBS -e error.err
+#PBS -q cola_d
+#PBS -l select=1:ncpus=20:mpiprocs=20
+cd $PBS_O_WORKDIR
+mpirun siesta NH3.fdf > NH3.out

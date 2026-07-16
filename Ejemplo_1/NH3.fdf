@@ -1,0 +1,87 @@
+# Name
+#########################
+SystemName             NH3
+SystemLabel            NH3
+
+# Structure
+#########################
+NumberOfAtoms          4
+NumberOfSpecies        2
+%block Chemical_Species_label
+    1   1  H  
+    2   7  N
+%endblock Chemical_Species_label
+LatticeConstant  20.02 Ang
+%block LatticeVectors
+   1.000    0.0000     0.000000
+   0.000     1.00000     0.000000
+    0.000000     0.000000    1.000000
+%endblock LatticeVectors
+AtomicCoordinatesFormat Ang
+%block AtomicCoordinatesAndAtomicSpecies < coord.fdf
+
+# Basis
+#########################
+PAO.BasisSize      DZP
+%block PAO.Basis
+N                     2
+ n=2   0   2
+   8.0    3.05
+ n=2   1   2 P   1
+   8.0    2.85
+%endblock PAO.Basis
+# K-points
+#########################
+%block kgrid_Monkhorst_Pack
+  1   0   0    0.0
+  0   1   0    0.0
+  0   0   1    0.0
+%endblock kgrid_Monkhorst_Pack
+
+# SCF options
+#########################
+XC.functional           GGA
+XC.authors              PBE
+MeshCutoff              1000.0 Ry
+MaxSCFIterations        1000
+SCF.Mixer.Weight        0.01
+SCF.Mixer.History       10
+SCF.DM.Tolerance        1.d-4
+SCF.H.Tolerance         1.d-4 eV
+SolutionMethod          diagon
+ElectronicTemperature   10 K
+Spin polarized
+# Molecular dynamics and relaxations
+
+MD.TypeOfRun            cg          
+MD.NumCGsteps        1
+MD.MaxCGDispl        0.005  Ang
+MD.MaxForceTol       18.0 eV/Ang
+WriteCoorStep 		T
+
+# GRID
+# --------------
+GridCellSampling [ 2 2 2 ]
+
+#########################
+
+#Output options
+#########################
+WriteCoorStep          T
+WriteForces            T
+WriteMullikenPop       1
+WriteCoorXmol          T
+
+
+# Restart
+#########################
+DM.UseSaveDM           T
+MD.UseSaveXV           T
+SaveHS                 T
+
+Write.DM.NetCDF        T
+Write.DMHS.NetCDF      T
+CDF.Grid.Precision    double
+CDF.Save               T
+
+
