@@ -53,8 +53,8 @@ Ok=(Ok+Ok')/2;
    
 [eigen_vector,~]=eig(Hk,Ok);
 
- C_mu=eigen_vector(:,142);   % >>> ELECCIÓN DEL USUARIO: índice del estado inicial
- C_mup=eigen_vector(:,143);  % >>> ELECCIÓN DEL USUARIO: índice del estado final
+ C_mu=eigen_vector(:,4);   % >>> ELECCIÓN DEL USUARIO: índice del estado inicial
+ C_mup=eigen_vector(:,5);  % >>> ELECCIÓN DEL USUARIO: índice del estado final
     end
 end
 
@@ -71,7 +71,7 @@ d=post.eigen_energies;
 else
 d=diag(post.eigen_energies);
 end
-DE=(d(143)-d(142))*(1.6*10^(-19));% >>> ELECCIÓN DEL USUARIO: gap de energía. Los índices DEBEN coincidir con los estados de arriba.
+DE=(d(5)-d(4))*(1.6*10^(-19));% >>> ELECCIÓN DEL USUARIO: gap de energía. Los índices DEBEN coincidir con los estados de arriba.
 % Aquí no hay ..1 ..2 como en los eigen_vectors. Con más de un k-point puede
 % ser necesario usar eig(Hk(:,:...)) en lugar de post.eigen_energies.
 

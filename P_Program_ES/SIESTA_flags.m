@@ -16,7 +16,7 @@ function flags = SIESTA_flags
 
 %% RUTAS DE ENTRADA   >>> ELECCIÓN DEL USUARIO: apuntar a tu simulación de SIESTA
   flags.input.directory = ['../Ejemplo_1/'];
-  flags.input.file      = 'hBN.out';
+  flags.input.file      = 'NH3.out';
 
 %% FORMATO DE LECTURA DE O, H, DM:  NetCDF ('yes') vs BINARIO ('no')
   flags.netcdf          = 'yes';

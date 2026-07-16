@@ -53,8 +53,8 @@ Ok=(Ok+Ok')/2;
 [eigen_vector,~]=eig(Hk,Ok);
 
 % >>> USER CHOICE: initial and final states.
- C_mu=eigen_vector(:,142);   % >>> initial state index
- C_mup=eigen_vector(:,143);  % >>> final state index
+ C_mu=eigen_vector(:,4);   % >>> initial state index
+ C_mup=eigen_vector(:,5);  % >>> final state index
     end
 end
 
@@ -71,7 +71,7 @@ d=post.eigen_energies;
 else
 d=diag(post.eigen_energies);
 end
-DE=(d(143)-d(142))*(1.6*10^(-19)); % >>> USER CHOICE: energy gap. Indices MUST match the states above.
+DE=(d(5)-d(4))*(1.6*10^(-19)); % >>> USER CHOICE: energy gap. Indices MUST match the states above.
 % Note there are no ..1 ..2 here as there were for the eigen_vectors. With
 % more than one k-point it may be necessary to use eig(Hk(:,:...)) instead
 % of post.eigen_energies.
